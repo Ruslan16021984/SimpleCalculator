@@ -25,15 +25,21 @@ public class UI {
    private MyTextField txtChislo1;
    private MyTextField txtChislo2;
    private MyTextField txtResult;
+   public void createUI(){
+       textField();
+       createButton();
+       createPanels();
+       createFrame();
+   }
 
-   public void createButton(){
+   private void createButton(){
        btnAdd = new MyButton("прибавить");
        btnMultypli = new MyButton("Умножение");
        btnDyvide = new MyButton("деление");
        btnSustruct = new MyButton("вычитание");
        }
 
-    public void createPanels(){
+    private void createPanels(){
         myPanel = new MyPanel("panel1",100, 100, new FlowLayout(FlowLayout.LEFT));
         myPanel.setPreferredSize(new Dimension(250, 50));
 
@@ -57,7 +63,7 @@ public class UI {
         myPanel2.add(btnSustruct);
         myPanel2.add(btnMultypli);
     }
-    public void createFrame(){
+    private void createFrame(){
        myFrame = new MyFrame("калькулятор", 430, 200, new BorderLayout(2,2));
        myFrame.setMaximumSize(new Dimension(430, 200));
        myFrame.setResizable(false);
@@ -69,7 +75,7 @@ public class UI {
 
        myFrame.setVisible(true);
     }
-    public  void textField(){
+    private   void textField(){
        txtChislo1 = new MyTextField("", 10);
        txtChislo2 = new MyTextField("", 10);
        txtResult = new MyTextField("", 10);
